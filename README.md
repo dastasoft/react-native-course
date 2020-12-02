@@ -31,8 +31,8 @@ const ComponentsScreen = () => {
 
 const styles = StyleSheet.create({
   textStyle: {
-    fontSize: 30,
-  },
+    fontSize: 30
+  }
 });
 
 export default ComponentsScreen;
@@ -57,7 +57,7 @@ const ListScreen = () => {
     { name: "Friend #6" },
     { name: "Friend #7" },
     { name: "Friend #8" },
-    { name: "Friend #9" },
+    { name: "Friend #9" }
   ];
 
   return (
@@ -93,7 +93,7 @@ const friends = [
   { name: "Friend #6", key: "6" },
   { name: "Friend #7", key: "7" },
   { name: "Friend #8", key: "8" },
-  { name: "Friend #9", key: "9" },
+  { name: "Friend #9", key: "9" }
 ];
 ```
 
@@ -149,3 +149,5 @@ The component `TouchableOpacity` allows to pass any kind of component (even a gr
 The **primitive** `Button` was introduced later by the RN team to provide a simple and intuitive button to the devs.
 
 ### Using the React Navigation
+
+### Images
