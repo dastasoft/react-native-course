@@ -44,6 +44,8 @@ We still use JSX to give form to the UI (like in React web) and CSS-in-JS soluti
 
 If you are coming from React for the web (react-dom), you might be used to 'mapping' an array of data to build a list. In RN is better\* to use the **primitive** `FlatList`.
 
+\*FlatList has lazy loading and other tweaks to have a greater performance and customization than the map solution. FlatList optimizations will shine when the array of the data is large.
+
 ```js
 const ListScreen = () => {
   const friends = [
@@ -108,3 +110,42 @@ const friends = [
 ```
 
 We'll use this second approach because we don't need to modify the data with values of the view.
+
+### Buttons
+
+There are two types of buttons in RN:
+
+- `Button` -> Very simple component for showing a button and detecting a press.
+
+```js
+import { Button } from "react-native";
+
+const HomeScreen = () => {
+  return (
+    <Button
+      onPress={() => console.log("Button pressed")}
+      title="Go to Components Demo"
+    />
+  );
+};
+```
+
+- `TouchableOpacity` -> Highly customizable component that can detect a press on just about any kind of element.
+
+```js
+import { TouchableOpacity } from "react-native";
+
+const HomeScreen = () => {
+  return (
+    <TouchableOpacity onPress={() => console.log("List Pressed")}>
+      <Text>Go to List Demo</Text>
+    </TouchableOpacity>
+  );
+};
+```
+
+The component `TouchableOpacity` allows to pass any kind of component (even a group of components) and treat them as a button without a predefinied style.
+
+The **primitive** `Button` was introduced later by the RN team to provide a simple and intuitive button to the devs.
+
+### Using the React Navigation
