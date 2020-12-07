@@ -148,6 +148,41 @@ The component `TouchableOpacity` allows to pass any kind of component (even a gr
 
 The **primitive** `Button` was introduced later by the RN team to provide a simple and intuitive button to the devs.
 
+### React State
+
+If you already know React State from the web, you can skip this part, it's the same.
+
+Remember to follow the next rules:
+
+- We never directly modify a state variable. React only detect changes in the state through the setter.
+- We can name the state variable anything we wish.
+- We can track any kind of data that changes over time.
+- When a component is rerendered, **all of its children get rerendered too**.
+- A state variable can be passed to a child component (as so the setter).
+- Every instance of the component will have his own instance of the state.
+
+What we put inside of the state? Check the three questions below:
+
+- What piece of data is changing in our app?
+- What type of data is it?
+- What is the data's starting (default) value?
+
+For example:
+
+- What piece of data is changing in our app? -> A collection of images.
+- What type of data is it? -> An array.
+- What is the data's starting (default) value? -> Empty
+
+With thar answers we can generate the state of our component:
+
+```js
+import React, { useState } from "react";
+
+const MyComponent = () => {
+  const [images, setImages] = useState([]);
+};
+```
+
 ### Using the React Navigation
 
 ### Images
