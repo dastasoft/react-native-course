@@ -160,6 +160,7 @@ Remember to follow the next rules:
 - When a component is rerendered, **all of its children get rerendered too**.
 - A state variable can be passed to a child component (as so the setter).
 - Every instance of the component will have his own instance of the state.
+- Generally, we create state variables in the most parent component that needs to read or change a state value.
 
 What we put inside of the state? Check the three questions below:
 
