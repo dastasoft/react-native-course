@@ -184,6 +184,19 @@ const MyComponent = () => {
 };
 ```
 
+#### Reducers
+
+A reducer is a function that will manage changes to the state object. Think of using a reducer when multiplate states are close related and you know exactly when and how it changes.
+
+Is always called with two arguments
+
+- The first argument is the object that has all of our state in it
+- The second argument is a object that describes the update we want to make
+
+We look at the second argument and use it to decide how to change the first argument, but we will never change the first argument directly.
+
+Must always return a value to be used as first argument.
+
 ### Using the React Navigation
 
 ### Images
