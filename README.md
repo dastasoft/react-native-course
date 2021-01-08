@@ -186,7 +186,7 @@ const MyComponent = () => {
 
 #### Reducers
 
-A reducer is a function that will manage changes to the state object. Think of using a reducer when multiplate states are close related and you know exactly when and how it changes.
+A reducer is a function that will manage changes to the state object. Think of using a reducer when multiple states are close related and you know exactly when and how it changes.
 
 Is always called with two arguments
 
@@ -195,7 +195,22 @@ Is always called with two arguments
 
 We look at the second argument and use it to decide how to change the first argument, but we will never change the first argument directly.
 
-Must always return a value to be used as first argument.
+We must always return a value to be used as first argument.
+
+##### Community Conventions
+
+There are some rules that are optional but recommended to follow.
+
+The parameters we pass to the dispatcher function we will name it, type and payload:
+
+- type: String that describes the exact change operation we want to make
+- payload: Some data that is critical to the change operation
+
+For example:
+
+```js
+dispatch({ type: "change_red", payload: 15 });
+```
 
 ### Using the React Navigation
 
