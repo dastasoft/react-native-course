@@ -148,6 +148,35 @@ The component `TouchableOpacity` allows to pass any kind of component (even a gr
 
 The **primitive** `Button` was introduced later by the RN team to provide a simple and intuitive button to the devs.
 
+### Inputs
+
+The inputs works in a very similar way than in React web.
+
+```js
+import React, { useState } from "react";
+import { View, Text, TextInput } from "react-native";
+
+const TextScreen = () => {
+  const [name, setName] = useState("");
+
+  return (
+    <View>
+      <TextInput
+        style={styles.input}
+        autoCapitalize="none"
+        autoCorrect={false}
+        value={name}
+        onChangeText={newValue => setName(newValue)}
+      />
+    </View>
+  );
+};
+```
+
+- You must define a style, because `TextInput` are totally unstyled by default.
+- The props `autoCapitalize` and `autoCorrect` will be useful when dealing with Android and iOS plataforms at the same time, they have different behaviours, with this props to none and false you will get the same experience in any platform.
+- Like in React for web, creating a state, using the value and rerendering the new value through changing the state is the way to handle inputs.
+
 ### React State
 
 If you already know React State from the web, you can skip this part, it's the same.
@@ -215,3 +244,11 @@ dispatch({ type: "change_red", payload: 15 });
 ### Using the React Navigation
 
 ### Images
+
+### Layouts
+
+Let's talk about how to handle elements in the screen. We'll follow three diferent strategies that are very similar than in the web version:
+
+- Box Object Model -> The height/width of an element + the space around it (margins and paddings) -> Use this to affect the positioning of a single element.
+- Flex Box -> How some number of sibling elements get laid out inside a parent -> Use this to position multiple elements with a common parent
+- Position -> How a single element gets laid out inside of a parent -> Use this to override Box Object Model or Flex Box.
