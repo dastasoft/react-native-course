@@ -247,8 +247,67 @@ dispatch({ type: "change_red", payload: 15 });
 
 ### Layouts
 
-Let's talk about how to handle elements in the screen. We'll follow three diferent strategies that are very similar than in the web version:
+Let's talk about how to handle elements in the screen. We'll follow three diferent strategies that are very similar than in the web version.
 
-- Box Object Model -> The height/width of an element + the space around it (margins and paddings) -> Use this to affect the positioning of a single element.
-- Flex Box -> How some number of sibling elements get laid out inside a parent -> Use this to position multiple elements with a common parent
-- Position -> How a single element gets laid out inside of a parent -> Use this to override Box Object Model or Flex Box.
+#### Box Object Model
+
+The height/width of an element + the space around it (margins and paddings) -> Use this to affect the positioning of a single element.
+
+|-----margin-----|
+||----border----||
+|||---padding---||
+||||--cntent--||||
+
+Some example properties:
+
+- margin: Set the margin on all sides
+- marginVertical: Set the margin on top and bottom
+- marginHorziontal: Set the margin on left and right
+- padding: Set the padding on all sides
+- paddingVertical: Set the padding on top and bottom
+- paddingHorizontal: Set the padding on left and right
+- borderWidth: Set border width on all sides
+
+#### Flexbox
+
+How some number of sibling elements get laid out inside a parent, use this to position multiple elements with a common parent.
+
+Parent properties:
+
+- alignItems
+- justifyContent
+- flexDirection
+
+Child properties:
+
+- flex
+- alignSelf
+
+#### Position
+
+How a single element gets laid out inside of a parent, use this to override Box Object Model or Flex Box.
+
+Some properties:
+
+- position: relative by default, absolute.
+- top
+- bottom
+- left
+- right
+
+Some trick to expand an item
+
+```js
+myCustomStyle: {
+  position: absolute,
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0
+},
+myCustomStyleShorthand: {
+  ...StyleSheet.absoluteFillObject
+}
+```
+
+Both properties achieves the same result.
