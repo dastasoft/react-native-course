@@ -15,6 +15,24 @@ Status: **Ongoing**
  
 ## Table of contents
 
+## The CLI
+
+We can use these two CLI to create new React Native projects:
+
+### expo-cli
+
+Adds in a ton of defaul config to use features common in apps, like icons, video, better camera usage, etc.
+
+For creating a new project use the following command:
+
+```sh
+npx expo-cli init project-name
+```
+
+### react-native-cli
+
+Default CLI to generate a project. Requires a lot of extra work to add common features but gives you more control.
+
 ## Concepts
 
 The `React` library is all about how different components work together. On the other hand the `React Native` library knows how to take some information from those components and use it to actually show content on the mobile device.
