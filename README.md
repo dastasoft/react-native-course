@@ -261,6 +261,53 @@ dispatch({ type: "change_red", payload: 15 });
 
 ### Using the React Navigation
 
+React Navigation is a third party dependency to manage out-of-the-box the navigation between screens.
+
+```sh
+npm install react-navigation
+```
+
+Some of the components provided are:
+
+#### DrawerNavigator
+
+This will pop out a menu from the left hand side and show some list of links that the user can tab and go to other screen.
+
+#### BottomTabNavigator
+
+This is going to show a tabbed menu down the screen, the use can tab to pass different screens.
+
+#### StackNavigator
+
+This object is used to present a series of screens in a pretty straighforward fashion where we might have a link to some other screen.
+
+The entire header and the back button are automatically managed by the object.
+
+#### Basic configuration
+
+```js
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+
+import SearchScreen from "./src/screens/SearchScreen";
+
+const navigator = createStackNavigator(
+  {
+    Search: SearchScreen
+  },
+  {
+    initialRouteName: "Search",
+    defaultNavigationOptions: {
+      title: "Business Search"
+    }
+  }
+);
+
+export default createAppContainer(navigator);
+```
+
+This is the configuration in our `App.js` as you can see, we define a navigator which has a list of screens, the initial screen and a bunch of options, in this case we only put the header's title.
+
 ### Images
 
 ### Layouts
